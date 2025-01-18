@@ -1,18 +1,30 @@
 import { useState } from 'react'
 import './App.css'
+import HomePage from './components/HomePage'
+import NavigationBar from './components/NavigationBar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tab, setTab] = useState(0)
 
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Hello World: {count}
-        </button>
+    <div className="container">
+      <div className="one">
+        <HomePage />
       </div>
+      <div className="two">
+      <NavigationBar
+        names={["About", "Projects", "Contact"]} 
+        tab={tab}
+        setter={setTab} />
+      </div>
+    </div>
+    <div>
+        You've selected tab {tab}.
+    </div>
     </>
   )
 }
 
 export default App
+ 
