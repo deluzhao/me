@@ -2,13 +2,13 @@ interface NavigationTabProps {
     name: string;
     id: number;
     tab: number;
-    setter: any;
+    setter: (id:number) => void;
 }
 
 interface NavigationBarProps {
     names: string[];
     tab: number;
-    setter: any;
+    setter: (id:number) => void;
 }
 
 function NavigationTab({name, id, tab, setter}: NavigationTabProps) {

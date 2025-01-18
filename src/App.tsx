@@ -1,26 +1,28 @@
 import { useState } from 'react'
 import './App.css'
-import HomePage from './components/HomePage'
+import Header from './components/Header'
 import NavigationBar from './components/NavigationBar'
+import PageContent from './components/PageContent'
 
 function App() {
+  const tabNames = ["About", "Projects", "Contact"]
   const [tab, setTab] = useState(0)
 
   return (
     <>
     <div className="container">
-      <div className="one">
-        <HomePage />
+      <div className="header">
+        <Header />
       </div>
-      <div className="two">
+      <div className="navbar">
       <NavigationBar
-        names={["About", "Projects", "Contact"]} 
+        names={tabNames} 
         tab={tab}
         setter={setTab} />
       </div>
-    </div>
-    <div>
-        You've selected tab {tab}.
+      <div className="page">
+        <PageContent id={tab} />
+      </div>
     </div>
     </>
   )
