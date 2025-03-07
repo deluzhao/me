@@ -7,7 +7,7 @@ import PageContent from './components/PageContent'
 // https://javascript.info/browser-environment
 
 function App() {
-  const tabNames = ["About", "Projects", "Contact", "Random"]
+  const tabNames = ["About", "Projects", "Contact"]
   const [tab, setTab] = useState(0)
 
   return (
@@ -26,7 +26,7 @@ function App() {
         <PageContent id={tab} />
       </div>
       <div className="image">
-        <img src={kazuhaImage} alt="Kazuha" width={300} height="auto" style={{marginLeft: 50}}/>
+        <img src={kazuhaImage} alt="Kazuha" width={250} height="auto" style={{marginLeft: 15}}/>
       </div>
     </div>
     </>
